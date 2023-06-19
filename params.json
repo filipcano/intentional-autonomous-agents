@@ -1,0 +1,11 @@
+{
+  "use_visibility": true,
+  "hesitant_factor": 0.39390282426337353,
+  "acc2_prob": 0.5,
+  "acc1_prob": 0.5,
+  "brk2_prob": 0.5,
+  "brk1_prob": 0.5,
+  "noop0_prob": 0.9,
+  "slippery_factor": 1.2803688440466379,
+  "slippery_range": "(car_x > 28) & (car_x < 63)"
+}

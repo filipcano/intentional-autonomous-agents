@@ -1,0 +1,34 @@
+{
+ "cautious": {
+ "[accelerate]": "(((seen_ped=0)) | ((seen_ped=1)&(visibility=0)&(!car_close_block)) | ((seen_ped=1)&(visibility=0)&(car_close_block)&(car_v < 2)) | ((seen_ped=1)&(visibility=1)&(!is_within_shot)&(!car_close_ped)) | ((seen_ped=1)&(visibility=1)&(!is_within_shot)&(car_close_ped)&(car_v < 2)))",
+ "[brake]": "(((seen_ped=1)&(visibility=0)&(car_close_block)&(car_v > 2)) | ((seen_ped=1)&(visibility=1)&(is_within_shot)) | ((seen_ped=1)&(visibility=1)&(!is_within_shot)&(car_close_ped)&(car_v > 2)))",
+ "[nop]": "(((seen_ped=1)&(visibility=0)&(car_close_block)&(car_v = 2)) | ((seen_ped=1)&(visibility=1)&(!is_within_shot)&(car_close_ped)&(car_v = 2)))"
+ },
+ "reckless_old": {
+    "[accelerate]": "(((visibility=0)) | ((visibility=1)&(is_on_sidewalk_rv)&(!car_close_ped_rv)) | ((visibility=1)&(is_on_sidewalk_rv)&(car_close_ped_rv)&(car_v < 2)))",
+    "[brake]": "(((visibility=1)&(!is_on_sidewalk_rv)) | ((visibility=1)&(is_on_sidewalk_rv)&(car_close_ped_rv)&(car_v > 2)))",
+    "[nop]": "(((visibility=1)&(is_on_sidewalk_rv)&(car_close_ped_rv)&(car_v = 2)))"
+},
+"reckless": {
+    "[accelerate]": "((visibility=0) | (!is_within_shot) | (dist_x >= 15))",
+    "[brake]": "(visibility=1)&((is_within_shot)&(dist_x < 8))",
+    "[nop]": "(visibility=1)&((is_within_shot)&(dist_x < 15)&(dist_x >= 8))"
+},
+ "corrupt": {
+    "[accelerate]": "((is_within_shot) | (dist_x - car_v > 8))",
+    "[brake]": "(!(is_within_shot) & (dist_x - car_v < 8))",
+    "[nop]": "(!(is_within_shot) & (dist_x - car_v = 8))"
+},
+"accelerator": {
+    "[accelerate]": "true",
+    "[brake]": "false",
+    "[nop]": "false"
+},
+"braker": {
+    "[accelerate]": "false",
+    "[brake]": "true",
+    "[nop]": "false"
+}
+}
+
+
